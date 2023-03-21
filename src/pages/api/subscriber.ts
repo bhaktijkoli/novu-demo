@@ -17,6 +17,7 @@ export default async function handler(
         company
       }
     })
+
     await novu.subscribers.identify(user.id, {
       firstName: user.firstName,
       lastName: user.lastName,
@@ -24,6 +25,14 @@ export default async function handler(
       locale: 'en',
       data: { company },
     });
+
+    await novu.trigger('welcome', {
+      to: {
+        subscriberId: user.id
+      },
+      payload: {}
+    });
+
     return res.send({ success: true })
   }
   res.status(404).send("Not Found");
