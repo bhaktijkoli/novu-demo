@@ -4,14 +4,14 @@ import * as Yup from "yup";
 import axios from "axios";
 import Head from "next/head";
 
-export default function CreateSubscriber() {
-  const validationSchema = Yup.object().shape({
-    firstName: Yup.string().required("Required"),
-    lastName: Yup.string().required("Required"),
-    email: Yup.string().email("Invalid email").required("Required"),
-    company: Yup.string().required("Required"),
-  });
+const validationSchema = Yup.object().shape({
+  firstName: Yup.string().required("Required"),
+  lastName: Yup.string().required("Required"),
+  email: Yup.string().email("Invalid email").required("Required"),
+  company: Yup.string().required("Required"),
+});
 
+export default function CreateSubscriber() {
   return (
     <>
       <Head>

@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@novu/node": "^0.12.0",
+    "@novu/notification-center": "^0.12.0",
     "@prisma/client": "4.11.0",
     "@types/node": "18.15.3",
     "@types/react": "18.0.28",
